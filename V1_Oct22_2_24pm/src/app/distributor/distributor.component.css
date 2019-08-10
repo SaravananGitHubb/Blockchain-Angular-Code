@@ -1,0 +1,184 @@
+.downloadLink
+{
+        background-color: #f44336;
+        color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;    
+}
+
+
+.h3{
+    text-align: center;
+    background-color: rgb(218, 215, 215);
+    padding: 30px, 0px;
+    margin-top:-15px;
+    color:white;
+    padding-bottom:30px;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.add-on {
+    position: absolute;
+    top: 3px;
+    left: 8px;
+    z-index: 100;
+    margin-left: 270%;
+   }
+.fa fa-bars {
+    padding-top:50px;
+   }
+ .LotId{
+     color:blue;
+ }
+ .label{
+    padding-right: 40px;
+    margin-right:60px;
+    width:50%;
+ }
+ .panel-body
+ {
+     background-color: rgb(164, 204, 247);
+     width: 453px;
+     height: 675px;
+     background: url('/src/assets/img/farmer_bck1.jpg') no-repeat center;
+     background-size: 100% 100%;
+     background-position: top center;
+  }
+ .panel{
+     width:350px;
+ }
+ .panel-primary1{
+    border-color: none;
+    
+}
+.panel-primary2{
+    border-color: none;
+    margin-left: -16px;
+}
+ .navbar-nav{
+    padding: 13px;
+    margin-bottom: -34px;
+    background-color: white;
+ }
+ 
+ .red-text{
+    color: indianred;
+ }
+ 
+
+   
+.input-font{
+    font-style: inherit;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+
+}
+
+.input-field-slot{
+
+    padding-right: 8px;
+    padding-left: 8px;
+    width: 115px;
+    height: 20px;
+
+}
+
+.input-field-slot-image{
+    width: 20px;
+    height: 20px;
+}
+
+.fa-bars-align{
+    padding-left: 8px;
+}
+
+.col-xs-8 {
+    width: 91.666667%;
+}
+
+.user3 {
+    margin-top: 17px;
+}
+
+.user-search {
+    
+    width: 100%;
+    height: 34px;
+}
+
+.asset-search {
+    
+    width: 87.5px;
+    height: 34px;
+}
+
+.search-by {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:bold;
+}
+
+.asset2-search {
+    
+    width: 218px;
+    height: 34px;
+}
+
+
+.margin-top-heading {
+    
+    margin-top: 88px;
+}
+
+.input-field-text{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    padding-left: 0px;
+    
+}
+
+.login-fields-bg{
+    background-color: gainsboro;
+    
+    width: 115px;
+
+}
+
+.input-field-width{
+width:150%;
+}
+
+.title-text{
+    color:seashell;
+    font-size: xx-large;
+    margin-top: 100px;
+
+ }
+ 
+.title-font{
+    font-style: inherit;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+
+}
+
+.user-search {
+    
+    width: 109px;
+    height: 34px;
+}
+.asset-search {
+    
+    width: 109px;
+    height: 34px;
+}
+.search-by {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:bold;
+}
+.asset2-search {
+    
+    width: 218px;
+    height: 34px;
+}

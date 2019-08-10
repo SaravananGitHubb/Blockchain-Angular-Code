@@ -1,0 +1,87 @@
+<div class="container container-styles">
+  <div class="col-xs-7 col-xs-offset-3">
+      <div class="panel panel-primary" style="height: 637px; width: 453px">
+          <div class="panel-body padding" >
+              <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+              <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+              <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+              
+              
+<!-- search-->
+
+                  <div class="col-xs-8" >
+                      
+
+                      <div class="input-group">
+                          <div class="input-group-btn search-panel">
+                              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                  <span id="search_concept" class="search-by">Search by</span>
+                                  <span class="caret"></span>
+                              </button>
+                              <ul class="dropdown-menu" role="menu">
+                              </ul>
+                          </div>
+                          <form class="form-inline">
+                           
+                           <input type="text" class="asset2-search" name="searchby" placeholder="Assetid" [(ngModel)]="searchText" #searchby="ngModel" style="width: 100%">
+                          </form>
+                          <span class="input-group-btn">
+                              <button (click)="getSearchDetails(searchText)"  class="btn btn-default" type="icon">
+                                  <span class="glyphicon glyphicon-search"></span>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+                  <br>
+                  <br>                              
+                  <!-- <p style="margin-left: 115px" class="display-box"></p>              -->
+                 <!-- <div class="vl"></div> -->
+                  <b>Farmer</b>
+                  <p style="margin-left: 115px" class="display-box">5286</p>
+                  <div class="vl"></div>                
+                  <b>Processing House</b>     
+                  <p style="margin-left: 115px" class="display-box">1000</p>
+                  <div class="vl"></div>
+                  <b>Warehouse</b>
+                  <p style="margin-left: 115px" class="display-box">2000</p>
+                  <div class="vl"></div>
+                  <hr>
+                  <div class="Row">
+                    <div class="Column"> <div class="vl"></div></div>
+                    <div class="Column"> <div class="vl"></div></div>
+                    <div class="Column"> <div class="vl"></div></div>
+                    <div class="Column"> <div class="vl"></div></div>
+                </div>   
+                  <b>Distributor</b>           
+                  <table style="width:100%">
+                      <tr>
+                        <td> <p style="width:100px;" class="display-box">3000</p></td>
+                        <td> <p style="width:100px;" class="display-box">3001</p></td>
+                        <td> <p style="width:100px;" class="display-box">3002</p></td> 
+                        <td> <p style="width:100px;" class="display-box">3003</p></td>                          
+                      </tr>
+                   </table>
+                      <!-- <div class="Row">
+                        <div class="Column"> <div class="vl"></div></div>
+                        <div class="Column"> <div class="vl"></div></div>
+                        <div class="Column"> <div class="vl"></div></div>
+                        <div class="Column"> <div class="vl"></div></div>
+                    </div>  -->
+                 <!-- <b>Food Service Operator</b>           
+                  <table style="width:100%">
+                      <tr>
+                        <td> <p style="width:100px;" class="display-box">LOT01_F09</p></td>
+                        <td> <p style="width:100px;" class="display-box">LOT01_F10</p></td>
+                        <td> <p style="width:100px;" class="display-box">LOT01_F11</p></td> 
+                        <td> <p style="width:100px;" class="display-box">LOT01_F12</p></td>                          
+                      </tr>
+                      </table> -->
+              </div>
+          </div>
+      </div>
+    </div>
+              
+
+
+
+       

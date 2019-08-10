@@ -1,0 +1,150 @@
+<div class="container container-styles">
+
+    <div class="col-xs-7 col-xs-offset-3"  >
+        <div class="panel panel-primary">
+            <div class="panel-body padding">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <head> <meta name="viewport" ></head>
+    <div class ="h3" >
+        <span> <i class="fa fa-bars"></i></span>  
+        <div class="col-xs-8 col-xs-offset-2" style="padding-right: 40px"> 
+          <div class="asset">   
+            <div class="input-group"  > 
+                <div class="input-group-btn search-panel">  
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        <span id="search_concept">SEARCH BY</span> <span class="caret"></span>
+                    </button>
+                   
+                </div>
+                <input type="hidden" name="search_param" value="all" id="search_param">  
+                <form >      
+                <input type="text" class="form-control" name="searchby" class="srch" placeholder="assetid" [(ngModel)]="AssetId" #searchby="ngModel">
+                
+                </form>
+                <span class="input-group-btn">
+                    <button class="btn btn-default" (click)="getcattledetails()"type="icon"><span class="glyphicon glyphicon-search"></span></button>
+                </span>
+            </div>
+          </div>
+        </div>
+    </div>
+         <!--  <img class= "image" src="D:/POC/FoodTracebility/src/assets/img/sysco.jpeg" width="400" height="100">-->
+        <br>
+        <br>
+        <br>
+        <img class="logo" src="/src/assets/img/Sysco-Transparent-White.png" width="120" height="100" >
+        <div class="text-center">Farmer</div>
+    <!--<form class="form-horizontal">     
+     <div class="form-Group">
+        <div class="input-group">
+            <span class="input-group-addon">LOTID</span>
+            <input id="asset" type="text" class="form-control" name="">
+        </div>
+    </div>
+    <br><br>
+    </form> -->
+      
+  <div class="jumbotran">
+     <form #frm="ngForm">
+       <div class="panel panel-primary" >
+           <div class="form-group">
+            <div class="input-group">
+            <span class="input-group-addon">CATTLE TYPE</span>
+            <input id="asset" type="text" class="form-control" name="cattletype" [(ngModel)]="cattleType" #cattletype="ngModel">
+            </div>
+          </div>
+
+          <div class="form-group">
+              <div class="input-group">
+              <span class="input-group-addon">BIRTHDATE</span>
+              <input id="asset" type="text" class="form-control" name="DOB" [(ngModel)]="BirthDate" #DOB="ngModel">
+              </div>
+         </div>
+
+            <div class="form-group">
+                <div class="input-group">
+                <span class="input-group-addon">AGE</span>
+                <input id="asset" type="text" class="form-control" name="age" [(ngModel)]="Age" #age="ngModel">
+              </div>
+           </div>
+
+              <div class="form-group">
+                  <div class="input-group">
+                  <span class="input-group-addon">WEIGHT</span>
+                  <input id="asset" type="text" class="form-control" name="WEIGHT" [(ngModel)]="Weight" #WEIGHT="ngModel">
+                </div>
+             </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                    <span class="input-group-addon">LOCATION</span>
+                    <input id="asset" type="text" class="form-control" name="location" [(ngModel)]="Location" #location="ngModel">
+                  </div>
+                </div>
+               <div class="text-center">
+                  <button (click)="cancel()" class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-triangle-left"></span>
+                   </button>
+                  <button type="button"  class="btn btn-default btn-sm" disabled>
+                    <span class="glyphicon glyphicon-triangle-right"></span>
+                    </button>
+               </div>
+           </div><br><br>
+       </form>
+            <div class="text-center">
+            <button (click)="addcattle()" class="btn btn-primary">CREATE</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button (click)="pHouse()" class="btn btn-primary">TRANSFER</button><br><br>
+           </div>
+           <div [hidden]="hideAlert" class="text-center">
+       
+            <span>Addedd successfully!</span>
+        
+        </div > 
+         <div class="panel panel-primary" >
+            <div class="icons">
+            <div class="input-group">
+                <nav class="navbar navbar-expand-sm bg-light justify-content-center">
+                  <ul class="nav navbar-nav navbar-center">
+                    <li> 
+                            <button type="button" class="btn btn-default btn-sm" class="next" >
+                             <span class="glyphicon glyphicon-chevron-left" ></span> 
+                            </button>
+                         </li>
+                    <li>
+                        <a href="#" >
+                              <span>
+                              <img  src="/src/assets/img/history1.png" class="loc" with="15" height="15">
+                              History</span>
+                        </a>
+                      </li>
+                      <li>
+                         <a href="#">
+                          <span>
+                                <img  src="/src/assets/img/dashboard1.png" class="loc" with="15" height="15">
+                              Dashboard</span>
+                        </a>
+                      </li>
+                      <li>
+                          <a href="#">
+                            <span >
+                                    <img  src="/src/assets/img/history1.png" class="loc" with="15" height="15">
+                              Transactions</span>
+                          </a>
+                        </li>
+                        <li>
+                            <button type="button" class="btn btn-default btn-sm" class="next">
+                                   <span class="glyphicon glyphicon-chevron-right" ></span> 
+                                 </button>
+                         </li>
+                        </ul>
+              </nav>
+              </div>
+         </div>
+        </div>
+   </div>
+  </div>
+ </div>
+ </div>  
+</div>

@@ -1,0 +1,255 @@
+<div class="container container-styles">
+    <div class="col-xs-7 col-xs-offset-3">
+        <div class="panel panel-primary1">
+            <div class="panel-body padding">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+                <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+                
+                
+
+
+
+<!-- OUT bound search-->
+
+
+
+
+                    <div class="col-xs-8" [hidden]="outbound">
+                        
+
+                        <div class="input-group">
+                            <div class="input-group-btn search-panel">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    <span id="search_conceptout" class="search-by">Search by</span>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                </ul>
+                            </div>
+                            <form class="form-inline">
+                             
+                             <input type="text" class="asset2-search" name="searchbyout" placeholder="Assetid" [(ngModel)]="searchText3" #searchbyout="ngModel" >
+                            </form>
+                            <span class="input-group-btn">
+                             <!--   <button (click)="getphdetailsoutbound(searchText3)"  class="btn btn-default" type="icon">
+                                    <span class="glyphicon glyphicon-search"></span> -->
+                                    <button (click)="searchAsset(searchText3)"  class="btn btn-default" type="icon">
+                                    <span class="glyphicon glyphicon-search"></span>										
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                
+<!-- OUT bound search end-->
+
+
+                <br>
+               
+                
+                <div class="text-center  title-text title-font">
+                    
+                    
+                        <strong>Farmer </strong>
+                    
+
+                </div>
+
+
+
+                <br>
+
+
+               
+
+
+
+               
+                <div class="jumbotran" [hidden]="outbound">
+                    <form #frm="ngForm">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon input-field-text login-fields-bg input-field-slot">
+                                    <img src="/src/assets/img/user3.png" class="input-field-slot-image">&nbsp;User Id</div>
+                                    <input id="" type="text" class="form-control input-field-width" name="Userid" [(ngModel)]="userid" #Userid="ngModel" style="width: 150%">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon input-field-text login-fields-bg input-field-slot">
+                                    <img src="/src/assets/img/asset2.png" class="input-field-slot-image">&nbsp;Asset Id</span>
+                                    <input #new id="myasset" type="text" class="form-control input-field-width" name="assetid" value="" [(ngModel)]="AssetId" #assetid="ngModel" style="width: 150%">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon input-field-text login-fields-bg input-field-slot">
+                                    <img src="/src/assets/img/status2.png" class="input-field-slot-image">&nbsp;Status </span>										
+                                    <input id="" type="text" class="form-control input-field-width" name="status" [(ngModel)]="Status" #status="ngModel" style="width: 150%">
+                            </div>
+                        </div>
+
+                        <!-- <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon input-field-text login-fields-bg input-field-slot">
+                                    <img src="/src/assets/img/cert-id2.png" class="input-field-slot-image">&nbsp;Cert Id</span>&nbsp;&nbsp;&nbsp;
+                                <button (click)="view()" class="btn btn-primary">
+                                    <img src="/src/assets/img/search2.png" class="search2" with="20" height="20"> View
+                                </button>
+                            </div>
+                        </div> -->
+                      <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon input-field-text login-fields-bg input-field-slot">
+                                <img src="/src/assets/img/cert-id2.png" class="input-field-slot-image">&nbsp;Certificate</span>&nbsp;&nbsp;&nbsp;
+                                <a class="test" href="https://lh5.googleusercontent.com/mCoyxllKPMDNWQluIVkC3pnWsXuDutSWqZ3LlOJP1ELlRpY1CagmrvNKyXzajfflsS8KFSntE23vYQdvOdMeLdIdSvAQCUxZQfuuFfZZ44VgsAwflGyJVn1BW3LtToVgIEYU9R2k" target="_blank" class="btn btn-primary" style="width: 100px">View</a>
+                                &nbsp;&nbsp;&nbsp;
+                                 <button class="btn btn-primary" style="width: 100px" (click)="file.click()"> Add
+                               </button><input  style="display: none"  type="file" accept="image/*" #file> 
+                        </div>
+                    </div>						
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon input-field-text login-fields-bg input-field-slot">
+                                    <img src="/src/assets/img/location2.png" class="input-field-slot-image" with="20" height="20">&nbsp;Target</span>
+                                <input id="" type="text" class="form-control input-field-width" name="targetidout" [(ngModel)]="Targetid" #targetidout="ngModel" style="width: 150%">
+                                <br>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+
+                            <div class="text-center">
+                                <button class="btn btn-default btn-sm">
+                                    <span class="glyphicon glyphicon-triangle-left"></span>
+                                </button>
+                                <button (click)="getcattledetails(new.value)" type="button" class="btn btn-default btn-sm">
+                                    <span class="glyphicon glyphicon-triangle-right"></span>
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <!-- OUTBOUND CONTENT ENDS HERE -->
+<!-- additional details -->
+
+                <div class="" [hidden]="moredetails">
+                        <form #frm="ngForm">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-addon input-field-text login-fields-bg input-field-slot">
+                                            <img src="/src/assets/img/user3.png" class="input-field-slot-image">&nbsp;Cattle type</div>
+                                            <input id="asset" type="text" class="form-control input-field-width" name="cattletype" [(ngModel)]="cattleType" disabled #cattletype="ngModel" style="width: 150%">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon input-field-text login-fields-bg input-field-slot">
+                                            <img src="/src/assets/img/asset2.png" class="input-field-slot-image">&nbsp;Birthdate</span>
+                                            <input id="asset" type="text" class="form-control input-field-width" name="DOB" [(ngModel)]="BirthDate" #DOB="ngModel" disabled style="width: 150%">
+                                    </div>
+                                </div>
+        
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon input-field-text login-fields-bg input-field-slot">
+                                            <img src="/src/assets/img/status2.png" class="input-field-slot-image">&nbsp;Age </span>
+                                            <input id="asset" type="text" class="form-control input-field-width" name="age" [(ngModel)]="Age" #age="ngModel" disabled style="width: 150%">
+                                        
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon input-field-text login-fields-bg input-field-slot">
+                                            <img src="/src/assets/img/asset2.png" class="input-field-slot-image">&nbsp;Weight</span>
+                                            <input id="asset" type="text" class="form-control input-field-width" name="WEIGHT" [(ngModel)]="Weight" #WEIGHT="ngModel" disabled style="width: 150%">
+                                    </div>
+                                </div>
+        
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon input-field-text login-fields-bg input-field-slot">
+                                            <img src="/src/assets/img/status2.png" class="input-field-slot-image">&nbsp;Location </span>
+                                            <input id="asset" type="text" class="form-control input-field-width" name="location" [(ngModel)]="Location" disabled #location="ngModel" style="width: 150%">
+                                        
+                                    </div>
+                                </div>
+                            </form>
+
+                            <div class="form-group">
+                                <div class="text-center">
+                                <button (click)="backtoOutbound()"class="btn btn-default btn-sm">
+                                    <span class="glyphicon glyphicon-triangle-left"></span>
+                                </button>
+                                <button  type="button" class="btn btn-default btn-sm" disabled>
+                                    <span class="glyphicon glyphicon-triangle-right"></span>
+                                </button>
+                            </div>
+                        </div> 
+                            
+
+                        </div>
+
+ 
+                        <div class="text-center">
+
+
+                            <!-- <button (click)="createAsset()" class="btn btn-primary">CREATE</button>&nbsp;&nbsp;&nbsp;&nbsp; -->
+                                 <button (click)="createAssets(userid, AssetId)" class="btn btn-primary">Create</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                             <!-- <button (click)="transfer()" class="btn btn-primary">TRANSFER</button> -->
+                                  <button (click)="transferAsset(userid, AssetId, Targetid)" class="btn btn-primary">Transfer</button>
+                            
+                           <div [hidden]="messageuser" class="text-center">
+            
+                                     <span>Transaction inprogress...</span>
+                                 
+                                 </div> 
+                           <!--  <div [hidden]="assetTransferred" class="text-center">
+            
+                                         <span>Asset Transferred!</span>
+                                     
+                             </div> -->
+                         
+                         </div>
+
+                        
+<br>
+<!-- additional details ends here-->
+<div class=" panel-primary2" style="margin-top: 5px;">
+    <div class="input-group" >
+        <ul class="nav navbar-nav navbar-center" style="width: 456px; background-color: inherit">
+
+    <li>
+        <a href="https://media.amazonwebservices.com/blog/2018/bc_not_stats_actually_explorer_1.png" >
+              <span>
+              <img  src="/src/assets/img/history1.png" class="loc" with="15" height="15">
+              History</span>
+        </a>
+      </li>
+      <li>
+         <a href="http://34.224.90.69:4200">
+          <span>
+                <img  src="/src/assets/img/dashboard1.png" class="loc" with="15" height="15">
+              Back to Login</span>
+        </a>
+      </li>
+      <li>
+          <a href="http://publicelb-test-1077256889.us-east-1.elb.amazonaws.com">
+            <span >
+                    <img  src="/src/assets/img/history1.png" class="loc" with="15" height="15">
+              Transactions</span>
+          </a>
+        </li>
+
+        </ul>
+      </div> 
+
+
+
+            </div>
+        </div>
+    </div>
+</div>

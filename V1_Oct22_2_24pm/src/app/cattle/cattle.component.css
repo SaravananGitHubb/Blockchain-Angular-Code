@@ -1,0 +1,87 @@
+
+.h3{
+    text-align: center;
+    background-color: rgb(218, 215, 215);
+    padding: 30px, 0px;
+    margin-top:-15px;
+    color:white;
+    padding-bottom:44px;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.add-on {
+    position: absolute;
+    top: 3px;
+    left: 8px;
+    z-index: 100;
+    margin-left: 270%;
+   }
+.fa-bars {
+    padding-top:6px;
+    float: left;
+    color: rgb(40, 134, 198)
+   }
+ .LotId{
+     color:blue;
+ }
+ .label{
+    padding-right: 40px;
+    margin-right:60px;
+    width:50%;
+ }
+ .btn{
+    align-items: center;
+ }
+ .panel-body
+ {
+     background-color: rgb(164, 204, 247);
+     width: 100%;
+     height: 100%;
+     background: url('/src/assets/img/farmer_bck1.jpg') no-repeat center;
+     background-size: 100% 100%;
+     background-position: top center;
+  }
+.panel{
+
+    width:457px;
+    margin-bottom: 18px;
+    background: none;
+}
+.panel-primary{
+   margin-left: -16px;
+   margin-bottom: 0px;
+}
+.navbar-nav{
+    padding: 6px;
+    margin-bottom: -34px;
+    background-color: white;
+    padding-bottom: 31px;
+}
+
+.search {
+    padding: 1px 106px;
+    margin-left: 272px;
+  }
+  .col-xs-offset-2{
+    margin-left: 10px;
+    padding-right: 0px;
+  }
+  .col-xs-8{
+      width:90.666667%;
+  }
+  .srch{
+      padding:2px;
+      width: 216px;
+  }
+  .logo{
+    margin-left: 134px;
+    margin-top: -8px;
+    padding-bottom: 37px;
+}
+  
+
+ 
+
+ 
+
+   

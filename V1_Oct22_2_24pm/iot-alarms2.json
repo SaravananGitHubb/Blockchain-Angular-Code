@@ -1,0 +1,16 @@
+{"iotdata":
+[{"binlocation":"loc2A",
+"starttime":"10-25-2018 10:45:00",
+"sensor":"s2",
+"endtime":"10-25-2018 11:45:00",
+"temperature":"47.0"
+},
+
+{"binlocation":"loc2A",
+"starttime":"10-25-2018 10:45:00",
+"sensor":"s2",
+"endtime":"10-25-2018 11:45:00",
+"temperature":"47.0"
+}]
+
+}

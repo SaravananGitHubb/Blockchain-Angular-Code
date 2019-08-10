@@ -1,0 +1,73 @@
+<div class="container container-styles">
+    <div class="col-xs-7 col-xs-offset-3">
+      <div class="panel panel-primary1">
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+          <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+          <link rel="stylesheet" href=" https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js">
+         
+           
+          
+          <div class="login" img src="/src/assets/img/logo.png" >
+          
+          <div class="panel-body padding">
+            <br>
+              <div class="text-center heading"><span>Blockchain Meat Traceability </span></div>
+              <div class="jumbotran">
+                 <form #loginForm="ngForm" class="form-inline">
+                  <div class="form-group">
+
+
+
+
+                      <div class="dropdown login-pad" >
+                          <button class="btn btn-secondary dropdown-toggle loginas-fields-bg login-as" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Login as
+                          </button>
+                          <select class="loginas"name="selectedTechs" ngModel>
+                            <option *ngFor="let tech of Profiles" [ngValue]="tech">
+                                 {{ tech.value }}
+                            </option>
+                      </select> 
+                         <!-- <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <button class="dropdown-item" type="button">Action</button>
+                            <button class="dropdown-item" type="button">Another action</button>
+                            <button class="dropdown-item" type="button">Something else here</button>
+                          </div>-->
+                        </div>
+
+
+
+
+
+                      <div class="input-group">
+                          <span class="input-group-addon input-field-text login-fields-bg">Username</span>
+                            <input id="" type="text" class="form-control" name="username" [(ngModel)]="userName" #username="ngModel">
+                          <!--<div *ngIf="username.touched && !username.valid" style="color:red">UserName is required</div>-->
+                        
+                        </div> 
+                  </div><br><br>
+                   
+                  <div class="form-group">
+                      <div class="input-group">
+                      <span class="input-group-addon input-field-text login-fields-bg">Password</span>
+                       <input id="" type="password" class="form-control" name="password" [(ngModel)]="pasWord" #password="ngModel">
+                         <!-- <div *ngIf="password.touched && !password.valid"  style="color:red">Password is required</div> -->
+                        </div>
+                  </div><br><br>
+                   
+                <!--<div *ngIf="!valid" class="error">Invalid Credentials...Please try again...</div>-->
+                  <div class="form-group">
+                      <span class="col-xs-4"></span>
+                      <div class="col-xs-3">
+                        <button (click)="onSubmit()" class="btn btn-primary" [disabled]="!loginForm.form.valid">Login</button>
+                      </div>
+                </div>
+               <!-- <span class="col-xs-5" style="top:8px">
+                    <a  style="color:#337ab7;text-decoration: underline;">Cancel</a>
+                </span>-->
+              </form>
+          </div>
+       </div>
+     </div>
+</div>

@@ -1,0 +1,81 @@
+.panel-primary1{
+    border-color: none;
+    
+}
+.panel-body{
+    padding: 50px;
+    
+    background-color: rgb(164, 204, 247);
+    width: 453px;
+    height: 665px;
+    background: url('/src/assets/img/login.jpg') no-repeat center;
+    background-size: 100% 100%;
+    background-position: top center;
+    padding-bottom: 110px;
+}
+.body{
+    margin:25px;
+}
+.panel-heading{
+    margin-top: 20px;
+}
+.panel{
+    width:400px;
+}
+.btn {    
+padding: 6px 22px;
+}
+
+.btn-primary{
+    border: 1px;
+    padding: 15px 54px;
+}
+.text-center{
+    font:yellow;
+    font-size: 13px;
+    margin: 90px;
+}
+.loginas{
+    padding-bottom: 12px;
+	position: absolute;
+	text-align: center;
+    width: 206px;
+}
+
+.login-pad{
+
+       padding-bottom: 25px;
+}
+
+.heading{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    margin-top: 113px;
+    margin-bottom: 54px;
+
+}
+
+.input-field-text{
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+.login-fields-bg{
+    background-color: gainsboro;
+    font-weight: bold;
+    color: rgb(2, 37, 66);
+}
+
+.loginas-fields-bg{
+    background-color: steelblue;
+    font-weight: bold;
+    color: rgb(2, 37, 66);
+}
+
+.login-as{
+
+    padding-right: 19px;
+    padding-left: 11px;
+    
+}

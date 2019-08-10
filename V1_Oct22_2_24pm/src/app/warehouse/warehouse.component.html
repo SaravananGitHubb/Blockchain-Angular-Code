@@ -1,0 +1,465 @@
+<div class="container container-styles">
+    <div class="col-xs-7 col-xs-offset-3">
+        <div class="panel panel-primary1">
+            <div class="panel-body padding">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+                <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+<!-- IN bound search-->
+
+                    <div class="col-xs-8" [hidden]="inbound">
+
+
+                        <div class="input-group">
+                            <div class="input-group-btn search-panel">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    <span id="search_concept" class="search-by">Search by</span>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                </ul>
+                            </div>
+                            <form class="form-inline">
+                            <input type="text" class="user-search" name="searchbyin" placeholder="Userid" [(ngModel)]="searchText2" #searchbyin="ngModel" >
+
+                            <input type="text" class="asset-search" name="searchbyin" placeholder="Assetid" [(ngModel)]="searchText1" #searchbyin="ngModel" >
+                            </form>
+                            <span class="input-group-btn">
+                             <!--   <button (click)="getwhdetails(searchText1,searchText2)"  class="btn btn-default" type="icon"> -->
+                                <button (click)="searchphAsset(searchText1, searchText2)"  class="btn btn-default" type="icon">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+
+<!-- IN bound search end-->
+
+
+<!-- OUT bound search-->
+
+
+
+
+                    <div class="col-xs-8" [hidden]="outbound">
+
+
+                        <div class="input-group">
+                            <div class="input-group-btn search-panel">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    <span id="search_concept" class="search-by">Search by</span>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                </ul>
+                            </div>
+                            <form class="form-inline">
+
+                             <input type="text" class="asset2-search" name="searchby" placeholder="Assetid" [(ngModel)]="searchText3" #searchby="ngModel" >
+                            </form>
+
+                            <span class="input-group-btn">
+                               <!-- <button (click)="getwhdetailsoutbound(searchText3)"  class="btn btn-default" type="icon">
+                                    <span class="glyphicon glyphicon-search"></span>  -->
+
+                                <button (click)="searchAssetwh(searchText3)"  class="btn btn-default" type="icon">
+                                    <span class="glyphicon glyphicon-search"></span>	    
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+
+<!-- OUT bound search end-->
+
+
+                <br>
+
+                <div class="text-center  title-text title-font">
+
+                   
+                        <strong>Warehouse </strong>
+                    
+
+                </div>
+
+                <div class="text-center">
+                    <button (click)="inboundfn()" class="btn btn-success">Inbound</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button (click)="outboundfn()" class="btn btn-danger">Outbound</button>
+                </div>
+
+                <br>
+
+
+                <!-- INBOUND CONTENT STARTS HERE -->
+                <div class="jumbotran" [hidden]="inbound">
+                    <form #frm="ngForm">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon input-field-text login-fields-bg input-field-slot">
+                                    <img src="/src/assets/img/user3.png" class="input-field-slot-image">&nbsp;User Id</div>
+                                <input id="" type="text" class="form-control" name="Useridin" [(ngModel)]="useridin" #Useridin="ngModel" style="width: 150%">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon input-field-text login-fields-bg input-field-slot">
+                                    <img src="/src/assets/img/asset2.png" class="input-field-slot-image">&nbsp;Asset Id</span>
+                                <input id="myassetin" type="text" class="form-control" name="assetidin" [(ngModel)]="AssetIdin" #assetidin="ngModel" style="width: 150%">
+                            </div>
+                        </div>
+
+                      <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon input-field-text login-fields-bg input-field-slot">
+                                <img src="/src/assets/img/cert-id2.png" class="input-field-slot-image">&nbsp;Certificate</span>&nbsp;&nbsp;&nbsp;
+                                <a class="test" href="https://lh5.googleusercontent.com/mCoyxllKPMDNWQluIVkC3pnWsXuDutSWqZ3LlOJP1ELlRpY1CagmrvNKyXzajfflsS8KFSntE23vYQdvOdMeLdIdSvAQCUxZQfuuFfZZ44VgsAwflGyJVn1BW3LtToVgIEYU9R2k" target="_blank" class="btn btn-primary" style="width: 100px">View</a>
+                                &nbsp;&nbsp;&nbsp;
+                                <!-- <button class="btn btn-primary" style="width: 100px" (click)="file.click()"> ADD
+                               </button><input  style="display: none"  type="file" accept="image/*" #file>  -->
+                        </div>
+                    </div>					
+						
+                        <!-- <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon input-field-text login-fields-bg input-field-slot">
+                                    <img src="/src/assets/img/cert-id2.png" class="input-field-slot-image">&nbsp;Cert Id</span>&nbsp;&nbsp;&nbsp;
+                                <button (click)="view()" class="btn btn-primary">
+                                    <img src="/src/assets/img/search2.png" class="search2" with="20" height="20"> View
+                                </button>
+                            </div>
+                        </div> -->
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon input-field-text login-fields-bg input-field-slot">
+                                    <img src="/src/assets/img/status2.png" class="input-field-slot-image">&nbsp;Status </span>
+                                <input id="" type="text" class="form-control" name="statusin" [(ngModel)]="Statusin" #statusin="ngModel" style="width: 150%">
+                            </div>
+                        </div>
+
+
+                    </form>
+                    <div class="text-center">
+
+
+                       <!-- <button (click)="inboundAcceptfn()" class="btn btn-primary">ACCEPT</button>&nbsp;&nbsp;&nbsp;&nbsp; -->
+                        <button (click)="whreceivesLot(useridin, AssetIdin)" class="btn btn-primary">Accept</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                       <!-- <button (click)="inboundRejectfn()" class="btn btn-primary">REJECT</button> -->
+                        <button (click)="whrejectsLot(useridin, AssetIdin)" class="btn btn-primary">Reject</button>
+                    </div>
+
+                    <!-- <div ng-model="message" ng-show="inboundAccept" class="message fadein fadeout">{{DAAAAAAANG}}</div> -->
+                 <!--   <div [hidden]="inboundAccept" class="text-center">
+
+                            <span>Accepted!</span>
+
+                    </div>
+
+                    <div [hidden]="inboundReject" class="text-center">
+
+                            <span>Rejected!</span>
+
+                    </div> -->
+
+                           <div [hidden]="messageuser" class="text-center">
+            
+                                     <span>Transaction inprogress...</span>
+                                 
+                                 </div> 						
+
+                    <div class= "panel-primary2" style= "margin-bottom: 0px;
+                    margin-top: 87px;" >
+                        <div class="input-group" >
+                            <ul class="nav navbar-nav navbar-center" style="width: 454px; background-color: inherit;"  >
+                    
+                        <li>
+                            <a href="http://34.224.90.69:4200/history" target="_blank" >
+                                  <span>
+                                  <img  src="/src/assets/img/history1.png" class="loc" with="12" height="15">
+                                  History</span>
+                            </a>
+                          </li>
+                          <li>
+                             <a href="http://34.224.90.69:4200">
+                              <span style="    margin-left: 17px;
+                              margin-right: 17px;   ">
+                                    <img  src="/src/assets/img/dashboard1.png" class="loc" with="12" height="15">
+                                  Back to Login</span>
+                            </a>
+                          </li>
+                          <li>
+                              <a href="http://34.224.90.69:4200/recall" target="_blank">
+                                <span >
+                                        <img  src="/src/assets/img/history1.png" class="loc" with="12" height="15">
+                                  Recall</span>
+                              </a>
+                            </li>
+                        </ul>
+                    
+                          </div>
+                     </div>
+
+
+                </div>
+                <!-- INBOUND CONTENT ENDS HERE -->
+
+
+
+                <!-- OUTBOUND CONTENT STARTS HERE -->
+                <div class="jumbotran" [hidden]="outbound">
+                    <form #frm="ngForm">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon input-field-text login-fields-bg input-field-slot">
+                                    <img src="/src/assets/img/user3.png" class="input-field-slot-image">&nbsp;User Id</div>
+                                <input id="" type="text" class="form-control" name="Userid" [(ngModel)]="userid" #Userid="ngModel" style="width: 150%">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon input-field-text login-fields-bg input-field-slot">
+                                    <img src="/src/assets/img/asset2.png" class="input-field-slot-image">&nbsp;Asset Id</span>
+                                <input #new id="myasset" type="text" class="form-control" value="" name="assetid" [(ngModel)]="AssetId" #assetid="ngModel" style="width: 150%">
+                            </div>
+                        </div>
+
+                         <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon input-field-text login-fields-bg input-field-slot">
+                                    <img src="/src/assets/img/location2.png" class="input-field-slot-image" with="20" height="20">&nbsp;Phlot Id</span>
+                                <input id="" type="text" class="form-control" name="phlotid" [(ngModel)]="Phlotid" #phlotid="ngModel"  style="width: 150%">
+                                <br>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon input-field-text login-fields-bg input-field-slot">
+                                    <img src="/src/assets/img/status2.png" class="input-field-slot-image">&nbsp;Status </span>
+                                <input id="" type="text" class="form-control" name="status" [(ngModel)]="Status" #status="ngModel"  style="width: 150%">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon input-field-text login-fields-bg input-field-slot">
+                                    <img src="/src/assets/img/location2.png" class="input-field-slot-image" with="20" height="20">&nbsp;Destination</span>
+                                <input id="" type="text" class="form-control" name="targetid" [(ngModel)]="Targetid" #targetid="ngModel"  style="width: 150%">
+                                <br>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+
+                            <div class="text-center">
+                                <button class="btn btn-default btn-sm">
+                                    <span class="glyphicon glyphicon-triangle-left"></span>
+                                </button>
+                                <button (click)="mdetailswh(new.value)" type="button" class="btn btn-default btn-sm">
+                                    <span class="glyphicon glyphicon-triangle-right"></span>
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+
+                    <div class="text-center">
+
+
+                        <!--<button (click)="createAsset()" class="btn btn-primary">CREATE</button>&nbsp;&nbsp;&nbsp;&nbsp; -->
+                        <button (click)="createWhAsset(AssetId, Phlotid)" class="btn btn-primary">Create</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button (click)="transferwh(binLocation,AssetId, Phlotid, Targetid)" class="btn btn-primary">Transfer</button>
+                       <!-- <button (click)="transferWhAsset(AssetId, Phlotid, Targetid)" class="btn btn-primary">Transfer</button> -->
+                     <!--   <div [hidden]="assetCreated" class="text-center">
+
+                                <span>Asset created!</span>
+
+                            </div>
+                        <div [hidden]="assetTransferred" class="text-center">
+
+                                    <span>Asset Transferred!</span>
+
+                        </div> -->
+
+                           <div [hidden]="messageuser" class="text-center">
+            
+                                     <span>Transaction inprogress...</span>
+                                 
+                                 </div> 						
+						
+                    </div>
+
+                       <div [hidden]="transferreject" class="text-center">
+
+                                <span>Asset transfer rejected by IOT!</span>
+
+                            </div>					
+					
+                    <div class=" panel-primary2" >
+                        <div class="input-group" >
+                            <ul class="nav navbar-nav navbar-center" style="width: 456px; background-color: inherit;">
+                    
+                        <li>
+                            <a href="http://34.224.90.69:4200/history" target="_blank" >
+                                  <span>
+                                  <img  src="/src/assets/img/history1.png" class="loc" with="12" height="15">
+                                  History</span>
+                            </a>
+                          </li>
+                          <li>
+                             <a href="http://34.224.90.69:4200">
+                              <span style="    margin-left: 17px;
+                              margin-right: 17px;   ">
+                                    <img  src="/src/assets/img/dashboard1.png" class="loc" with="12" height="15">
+                                  Back to Login</span>
+                            </a>
+                          </li>
+                          <li>
+                              <a href="http://34.224.90.69:4200/recall" target="_blank">
+                                <span >
+                                        <img  src="/src/assets/img/history1.png" class="loc" with="12" height="15">
+                                  Recall</span>
+                              </a>
+                            </li>
+                        </ul>
+                    
+                          </div>
+                     </div>
+
+
+                </div>
+                <!-- OUTBOUND CONTENT ENDS HERE -->
+<!-- additional details -->
+
+                <div class="" [hidden]="moredetails">
+                        <form #frm="ngForm">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-addon input-field-text login-fields-bg input-field-slot">
+                                            <img src="/src/assets/img/user3.png" class="input-field-slot-image">&nbsp;Bin location</div>
+                                        <input id="" #binl type="text" class="form-control" name="Binlocation" value="" [(ngModel)]="binLocation" disabled #Binlocation="ngModel" style="width: 150%">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon input-field-text login-fields-bg input-field-slot">
+                                            <img src="/src/assets/img/asset2.png" class="input-field-slot-image">&nbsp;Rack type</span>
+                                        <input id="myasset" type="text" class="form-control" name="Racktype" [(ngModel)]="racktype" disabled #Racktype="ngModel" style="width: 150%">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon input-field-text login-fields-bg input-field-slot">
+                                            <img src="/src/assets/img/asset2.png" class="input-field-slot-image">&nbsp;In time</span>
+                                        <input id="myasset" type="text" class="form-control" name="Intime" [(ngModel)]="intime" disabled #Intime="ngModel" style="width: 150%">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon input-field-text login-fields-bg input-field-slot">
+                                            <img src="/src/assets/img/asset2.png" class="input-field-slot-image">&nbsp;Deliver by</span>
+                                        <input id="myasset" type="text" class="form-control" name="Deliverby" [(ngModel)]="deliverby" disabled #Deliverby="ngModel" style="width: 150%">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon input-field-text login-fields-bg input-field-slot">
+                                            <img src="/src/assets/img/status2.png" class="input-field-slot-image">&nbsp;Location </span>
+                                            <input id="myasset" type="text" class="form-control" name="Location" [(ngModel)]="location" disabled #Location="ngModel" style="width: 150%">
+
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="form-group">
+
+                                    <div class="text-center">
+                                        <button (click)="backtoOutbound()"class="btn btn-default btn-sm">
+                                            <span class="glyphicon glyphicon-triangle-left"></span>
+                                        </button>
+                                        <button (click)="mdetailswh(new.value)" type="button" class="btn btn-default btn-sm" disabled>
+                                            <span class="glyphicon glyphicon-triangle-right"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            <div class="text-center">
+
+
+                                    <!--<button (click)="createAsset()" class="btn btn-primary">CREATE</button>&nbsp;&nbsp;&nbsp;&nbsp; -->
+                                    <button (click)="createWhAsset(AssetId, Phlotid)" class="btn btn-primary">Create</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                   <button (click)="transferwh(binLocation,AssetId, Phlotid, Targetid)" class="btn btn-primary">Transfer</button>
+                                 <!--   <button (click)="transferWhAsset(AssetId, Phlotid, Targetid)" class="btn btn-primary">Transfer</button>-->
+                                  <!--  <div [hidden]="assetCreated" class="text-center">
+
+                                            <span>Asset created!</span>
+
+                                        </div>
+                                    <div [hidden]="assetTransferred" class="text-center">
+
+                                                <span>Asset Transferred!</span>
+
+                                    </div> -->
+
+                       <div [hidden]="transferreject" class="text-center">
+
+                                <span>Asset transfer rejected by IOT!</span>
+
+                            </div>									
+									
+                                </div>
+								
+                           <div [hidden]="messageuser" class="text-center">
+            
+                                     <span>Transaction inprogress...</span>
+                                 
+                                 </div>
+								 
+                                <div class=" panel-primary2" >
+                                    <div class="input-group" >
+                                        <ul class="nav navbar-nav navbar-center" style="width: 456px; background-color: inherit;">
+                                
+                                    <li>
+                                        <a href="http://34.224.90.69:4200/history" target="_blank" >
+                                              <span>
+                                              <img  src="/src/assets/img/history1.png" class="loc" with="12" height="15">
+                                              History</span>
+                                        </a>
+                                      </li>
+                                      <li>
+                                         <a href="http://34.224.90.69:4200">
+                                          <span style="    margin-left: 17px;
+                                          margin-right: 17px;   ">
+                                                <img  src="/src/assets/img/dashboard1.png" class="loc" with="12" height="15">
+                                              Back to Login</span>
+                                        </a>
+                                      </li>
+                                      <li>
+                                          <a href="http://34.224.90.69:4200/recall" target="_blank">
+                                            <span >
+                                                    <img  src="/src/assets/img/history1.png" class="loc" with="12" height="15">
+                                              Recall</span>
+                                          </a>
+                                        </li>
+                                    </ul>
+                                
+                                      </div>
+                                 </div>
+
+
+                        </div>
+
+
+<!-- additional details ends here-->
+<br>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>

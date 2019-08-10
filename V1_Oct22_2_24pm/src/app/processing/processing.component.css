@@ -1,0 +1,47 @@
+
+
+.add-on {
+    position: absolute;
+    top: 3px;
+    left: 8px;
+    z-index: 100;
+    margin-left: 270%;
+   }
+.fa-bars {
+    padding: top 5,0px;
+   }
+ .label{
+    padding-right: 40px;
+    margin-right:60px;
+    width:50%;
+ }
+ .panel-body{
+    margin-bottom: 342px;
+     height:10px;
+ }
+ .panel{
+    width: 423px;
+ }
+ .panel-primary{
+    margin-left: -16px;
+    
+ }
+ .navbar-nav{
+    padding: 13px;
+    margin-bottom: -34px;
+ }
+ .search{  
+    margin-left: 28px;
+}
+.col-xs-8{
+    width:86%;
+}
+.row{
+    background-color:rgb(172, 168, 168); 
+    margin-top: -15px;
+}
+ 
+
+ 
+
+   

@@ -1,0 +1,128 @@
+<div class="container container-styles">
+  <div class="col-xs-7 col-xs-offset-3">
+      <div class="panel panel-primary">
+          <div class="panel-body padding" style="height: 637px; width: 453px">
+              <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+              <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+              <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+              
+             
+              <tabs (currentTabChange)="toggleTab($event)" style="margin-top: 180px;min-height: 400px">
+               <tab tabTitle = "Manual Recall">
+                 
+                <div class="input-group">
+                    <!-- <div class="input-group-btn search-panel">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <span id="search_concept" class="search-by">Search by</span>
+                            <span class="caret"></span>
+                        </button> 
+                        <ul class="dropdown-menu" role="menu">
+                        </ul>
+                    </div> -->
+                    <form class="form-inline">
+                    <input type="text" class="user-search" name="searchbyin" placeholder="assetid" [(ngModel)]="searchText2" #searchbyin="ngModel" style="width:100%; margin-left:45px;">     
+                    </form>
+                    <span class="input-group-btn">
+                       <!-- <button (click)="getwhdetails(searchText1,searchText2)"  class="btn btn-default" type="icon"> -->
+					  <!-- <button (click)="recallAsset(searchText2)"  class="btn btn-default" type="icon">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button> -->
+                    </span>
+                </div>
+              
+         
+              <div class="jumbotran" [hidden]="outbound">
+                  <!-- <form #frm="ngForm" class="form-border" >
+                    <h4 style="text-align: center">Item</h4>
+                    <span *ngIf="manualInput">
+                      <input type="checkbox"><input type="text"><br><br>                     
+                    </span>
+                    <span *ngIf="!manualInput">
+                    <span *ngFor="let recall of recallItems">
+                     <!-- <input type="checkbox" checked><input type="text" value="{{this.searchText2}}"><br><br> -->
+					 <!-- <input type="checkbox" checked><input type="text" class="user-search" name="display" placeholder="Whlotid" [(ngModel)]="displayasset" #display="ngModel">
+                    </span>
+                    </span>
+                   
+                      <div class="form-group">
+
+                          <div class="text-center">
+                              <button class="btn btn-default btn-sm">
+                                  <span class="glyphicon glyphicon-triangle-left"></span>
+                              </button>
+                              <button type="button" class="btn btn-default btn-sm">
+                                  <span class="glyphicon glyphicon-triangle-right"></span>
+                              </button>
+                          </div>
+                      </div>
+                  </form> -->
+                <br>
+				<br>
+				<br>
+				
+                  <div class="text-center">
+				  		<!-- <button (click)="recallAsset(searchText2)"  class="btn btn-default" type="icon">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button> -->
+                    <button (click)="recallAsset(searchText2)" style="width: 150px" class="btn btn-danger" *ngIf = "manualInput">Recall</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <!-- <button style="width: 150px" class="btn btn-success">Undo recall</button> -->
+                  </div>
+                            <div [hidden]="messageuser" class="text-center">
+            
+                                     <span>Recalled successfully</span>
+                                 
+                                 </div>                  
+                                  
+          </div>
+          </tab> 
+
+          <tab tabTitle = "Auto Recall">               
+                <div class="jumbotran" [hidden]="outbound">
+                    <form #frm="ngForm" class="form-border" style="padding: 0px">
+                  
+                     <span *ngIf="!manualInput">
+                        <table style="width:100%;">
+                            <tr>
+                              <th style="text-align: center">Item</th>
+                              <th>Source</th>
+                            </tr>
+                            <tr *ngFor="let recall of recallItems">
+                              <td><input type="checkbox" checked><input type="text" value="{{recall.asserid}}"></td>
+                              <td align="center">{{recall.source}}</td>
+                              <br><br>
+                            </tr>                     
+                          </table>
+                      
+                      </span>
+                
+
+                   
+                        <div class="form-group">
+  
+                            <div class="text-center">
+                                <button class="btn btn-default btn-sm">
+                                    <span class="glyphicon glyphicon-triangle-left"></span>
+                                </button>
+                                <button type="button" class="btn btn-default btn-sm">
+                                    <span class="glyphicon glyphicon-triangle-right"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                  
+                    <div class="text-center">
+                      <button class="btn btn-danger" *ngIf = "manualInput">Recall</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                      <button style="width: 150px" class="btn btn-success">Undo recall</button>
+                    </div>
+					
+					
+
+                    
+                                    
+            </div>
+          </tab>
+        </tabs> 
+      </div>
+  </div>
+</div>
+
