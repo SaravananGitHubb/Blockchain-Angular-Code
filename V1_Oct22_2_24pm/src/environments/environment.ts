@@ -7,8 +7,8 @@ export const environment = {
   production: false,
 
   // URL of development API
-  apiUrl: 'http://34.224.90.69:3000',
-  apiIotUrl: 'http://34.224.90.69:3002'
+  apiUrl: 'http://18.204.228.223:3000',
+  apiIotUrl: 'http://18.204.228.223:3002'
 };
 
 /*
