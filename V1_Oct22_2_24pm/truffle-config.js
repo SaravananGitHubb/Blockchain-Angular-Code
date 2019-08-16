@@ -27,7 +27,7 @@ module.exports = {
  
 aws: {
             provider: () =>
-                    new HDWalletProvider(mnemonic, "http://internal-BLOCK-LoadB-1T4DSSPHRVKQD-855204096.us-east-1.elb.amazonaws.com:8545"),
+                    new HDWalletProvider(mnemonic, "http://Blockchainfs-Public-LB-837900052.us-east-1.elb.amazonaws.com:8545"),
                           network_id: "*",
                               }
 }
