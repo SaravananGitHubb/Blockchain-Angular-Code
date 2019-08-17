@@ -1,7 +1,7 @@
 pragma solidity ^0.5.8;
 
 contract FarmerInterface {
-  function readAsset(string _farmerIDnum, string _lotIDnum)
+  function readAsset(string memory _farmerIDnum, string memory _lotIDnum)
     view
     public
     returns (uint)
@@ -94,14 +94,14 @@ contract Processor{
         state = AssetsState.ContractCreated;
     }      
 
-	/*function readAsset(string _farmerIDnum, string _lotIDnum) public returns (uint) {
+	/*function readAsset(string memory _farmerIDnum, string memory _lotIDnum) public returns (uint) {
 	    Farmer contractOne = Farmer(farmeraddress);
 		contractOne.readAsset(_farmerIDnum,_lotIDnum);
 		return (fmr_farmerID,fmr_lotID,fmr_state,fmr_phID,fmr_reason);
 	}	*/
 	
 	//Warehouse creates lotIDWH	
-	function createAsset(string _lotIDPH, string _userID, string _reason) public{
+	function createAsset(string memory _lotIDPH, string memory _userID, string memory _reason) public{
 		lotIDPH[_lotIDPH].PHLotID = _lotIDPH;
 		lotIDPH[_lotIDPH].userID[_userID].userIDnum = _userID;	
 		lotIDPH[_lotIDPH].userID[_userID].state = uint(AssetsState.AssetCreated);
@@ -109,13 +109,13 @@ contract Processor{
 	}
 
 	//Warehouse creates lotIDWH	
-	function transferAsset(string _lotIDPH, string _userID, string _targetID) public{
+	function transferAsset(string memory _lotIDPH, string memory _userID, string memory _targetID) public{
 		//lotIDPH[_lotIDPH].state = uint(AssetsState.TransfertoPH);
 		lotIDPH[_lotIDPH].userID[_userID].targetID = _targetID;
 		lotIDPH[_lotIDPH].userID[_userID].state = uint(AssetsState.AssetTransferred);
 	}
 
-   function createWhAsset(string _lotIDPH, string _lotIDWH) public{
+   function createWhAsset(string memory _lotIDPH, string memory _lotIDWH) public{
 		lotIDPH[_lotIDPH].PHLotID = _lotIDPH;
 		lotIDPH[_lotIDPH].lotIDWH[_lotIDWH].whlotID = _lotIDWH;	
 		lotIDPH[_lotIDPH].lotIDWH[_lotIDWH].stateWH = uint(AssetsState.AssetCreated);
@@ -124,7 +124,7 @@ contract Processor{
    }
 
 	//Warehouse creates lotIDWH	
-	function transferWhAsset(string _lotIDPH, string _lotIDWH, string _targetID) public{
+	function transferWhAsset(string memory _lotIDPH, string memory _lotIDWH, string memory _targetID) public{
 		//lotIDPH[_lotIDPH].state = uint(AssetsState.TransfertoPH);
 		if (uint(lotIDPH[_lotIDPH].lotIDWH[_lotIDWH].stateWH) == 5) {
 			revert();
@@ -134,18 +134,18 @@ contract Processor{
 	}
 
 	//Warehouse recall lotIDWH	
-	function recallWhAsset(string _lotIDPH, string _lotIDWH, string _reason) public{
+	function recallWhAsset(string memory _lotIDPH, string memory _lotIDWH, string memory _reason) public{
 		//lotIDPH[_lotIDPH].state = uint(AssetsState.TransfertoPH)
 		lotIDPH[_lotIDPH].lotIDWH[_lotIDWH].stateWH = uint(AssetsState.AssetRecall);
 		lotIDPH[_lotIDPH].lotIDWH[_lotIDWH].reasonWH = _reason;
 	}	
 	
-	function readWhAsset(string _lotIDPH, string _lotIDWH) public returns (uint) {
+	function readWhAsset(string memory _lotIDPH, string memory _lotIDWH) public returns (uint) {
 		return (lotIDPH[_lotIDPH].lotIDWH[_lotIDWH].stateWH);
 	}	
 
 		//ProcessingHouse receives the lotID sent by the farmer after auditing
-	function whreceiveLot(string _lotIDPH, string _userID) public {        
+	function whreceiveLot(string memory _lotIDPH, string memory _userID) public {        
 
 		if (uint(lotIDPH[_lotIDPH].userID[_userID].state) != 2) {
 			revert();
@@ -159,7 +159,7 @@ contract Processor{
     }    	
 	//ProcessingHouse rejects the lot sent by the farmer in case if the quality of the meat is not good
 	
-	function whrejectLot(string _lotIDPH, string _userID) public {        
+	function whrejectLot(string memory _lotIDPH, string memory _userID) public {        
 
 		if (uint(lotIDPH[_lotIDPH].userID[_userID].state) != 2) {
 			revert();
@@ -169,20 +169,20 @@ contract Processor{
     }    	
 	
 	//anyone can read the lotIDWH
-	function processReadAsset(string _lotIDPH, string _userID) public returns (string, string, uint, string, string) {
+	function processReadAsset(string memory _lotIDPH, string memory _userID) public returns (string memory, string memory, uint, string memory, string memory) {
 		return (lotIDPH[_lotIDPH].PHLotID,lotIDPH[_lotIDPH].userID[_userID].userIDnum,lotIDPH[_lotIDPH].userID[_userID].state,lotIDPH[_lotIDPH].userID[_userID].targetID,lotIDPH[_lotIDPH].userID[_userID].reason);
 	}	
 	
-	function processState(string _lotIDPH, string _userID) public returns (uint) {
+	function processState(string memory _lotIDPH, string memory _userID) public returns (uint) {
 		return (lotIDPH[_lotIDPH].userID[_userID].state);
 	}	
 
-/*	function readAsset(string _farmerIDnum, string _lotIDnum) public returns (bool) {
+/*	function readAsset(string memory _farmerIDnum, string memory _lotIDnum) public returns (bool) {
 		assetread = exampleContract.readAsset(_farmerIDnum, _lotIDnum);
 		return true;
 	}		*/
 //distributor starts	
-   function createDistAsset(string _lotIDPH, string _lotIDWH, string _lotIDDist) public{
+   function createDistAsset(string memory _lotIDPH, string memory _lotIDWH, string memory _lotIDDist) public{
 		lotIDPH[_lotIDPH].PHLotID = _lotIDPH;
 		lotIDPH[_lotIDPH].lotIDWH[_lotIDWH].lotIDDist[_lotIDDist].caselotID = _lotIDWH;	
 		lotIDPH[_lotIDPH].lotIDWH[_lotIDWH].lotIDDist[_lotIDDist].stateDist = uint(AssetsState.AssetCreated);
@@ -191,7 +191,7 @@ contract Processor{
    }
 
 	//Warehouse creates lotIDWH	
-	function transferDistAsset(string _lotIDPH, string _lotIDWH, string _lotIDDist, string _targetID) public{
+	function transferDistAsset(string memory _lotIDPH, string memory _lotIDWH, string memory _lotIDDist, string memory _targetID) public{
 		//lotIDPH[_lotIDPH].state = uint(AssetsState.TransfertoPH);
 		if (uint(lotIDPH[_lotIDPH].lotIDWH[_lotIDWH].lotIDDist[_lotIDDist].stateDist) == 5) {
 			revert();
@@ -201,18 +201,18 @@ contract Processor{
 	}
 
 	//Warehouse recall lotIDWH	
-	function recallDistAsset(string _lotIDPH, string _lotIDWH, string _lotIDDist, string _reason) public{
+	function recallDistAsset(string memory _lotIDPH, string memory _lotIDWH, string memory _lotIDDist, string memory _reason) public{
 		//lotIDPH[_lotIDPH].state = uint(AssetsState.TransfertoPH)
 		lotIDPH[_lotIDPH].lotIDWH[_lotIDWH].lotIDDist[_lotIDDist].stateDist = uint(AssetsState.AssetRecall);
 		lotIDPH[_lotIDPH].lotIDWH[_lotIDWH].lotIDDist[_lotIDDist].reasonDist = _reason;
 	}	
 	
-/*	function readWhAsset(string _lotIDPH, string _lotIDWH, string _lotIDDist) public returns (uint) {
+/*	function readWhAsset(string memory _lotIDPH, string memory _lotIDWH, string memory _lotIDDist) public returns (uint) {
 		return (lotIDPH[_lotIDPH].lotIDWH[_lotIDWH].lotIDDist[_lotIDDist].stateDist);
 	}	*/
 
 		//ProcessingHouse receives the lotID sent by the farmer after auditing
-	function distreceiveLot(string _lotIDPH, string _lotIDWH) public {        
+	function distreceiveLot(string memory _lotIDPH, string memory _lotIDWH) public {        
 
 		if (uint(lotIDPH[_lotIDPH].lotIDWH[_lotIDWH].stateWH) != 2) {
 			revert();
@@ -226,7 +226,7 @@ contract Processor{
     }    	
 	//ProcessingHouse rejects the lot sent by the farmer in case if the quality of the meat is not good
 	
-	function distrejectLot(string _lotIDPH, string _lotIDWH) public {        
+	function distrejectLot(string memory _lotIDPH, string memory _lotIDWH) public {        
 
 		if (uint(lotIDPH[_lotIDPH].lotIDWH[_lotIDWH].stateWH) != 2) {
 			revert();
@@ -236,11 +236,11 @@ contract Processor{
     }    	
 	
 	//anyone can read the lotIDWH
-	function distReadAsset(string _lotIDPH, string _lotIDWH, string _lotIDDist) public returns (string, string, uint, string) {
+	function distReadAsset(string memory _lotIDPH, string memory _lotIDWH, string memory _lotIDDist) public returns (string memory, string memory, uint, string memory) {
 		return (lotIDPH[_lotIDPH].PHLotID,lotIDPH[_lotIDPH].lotIDWH[_lotIDWH].lotIDDist[_lotIDDist].caselotID,lotIDPH[_lotIDPH].lotIDWH[_lotIDWH].lotIDDist[_lotIDDist].stateDist,lotIDPH[_lotIDPH].lotIDWH[_lotIDWH].lotIDDist[_lotIDDist].targetID);
 	}	
 	
-	function distState(string _lotIDPH, string _lotIDWH, string _lotIDDist) public returns (uint) {
+	function distState(string memory _lotIDPH, string memory _lotIDWH, string memory _lotIDDist) public returns (uint) {
 		return (lotIDPH[_lotIDPH].lotIDWH[_lotIDWH].lotIDDist[_lotIDDist].stateDist);
 	}		
 	
