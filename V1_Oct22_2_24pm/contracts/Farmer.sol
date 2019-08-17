@@ -63,7 +63,7 @@ contract Farmer {
     }      
 	
 	//Warehouse creates lotIDnum	
-	function createAsset(string _farmerIDnum, string _lotIDnum, string _reason) public{
+	function createAsset(string memory _farmerIDnum, string memory _lotIDnum, string memory _reason) public{
 		farmerIDnum[_farmerIDnum].farmerID = _farmerIDnum;
 		farmerIDnum[_farmerIDnum].lotIDnum[_lotIDnum].state = uint(AssetState.AssetCreated);
 
@@ -73,7 +73,7 @@ contract Farmer {
 	}
 
 	//Warehouse creates lotIDnum	
-	function transferAsset(string _farmerIDnum, string _lotIDnum, string _phID, string _reason) public{
+	function transferAsset(string memory _farmerIDnum, string memory _lotIDnum, string memory _phID, string memory _reason) public{
 		farmerIDnum[_farmerIDnum].farmerID = _farmerIDnum;
 		farmerIDnum[_farmerIDnum].lotIDnum[_lotIDnum].state = uint(AssetState.TransfertoPH);
 		farmerIDnum[_farmerIDnum].phID = _phID;
@@ -84,7 +84,7 @@ contract Farmer {
 	}
 
 		//ProcessingHouse receives the lotID sent by the farmer after auditing
-	function phreceiveLot(string _farmerIDnum, string _lotIDnum) public {        
+	function phreceiveLot(string memory _farmerIDnum, string memory _lotIDnum) public {        
 
 		if (uint(AssetState.TransfertoPH) != 2) {
 			revert();
@@ -98,7 +98,7 @@ contract Farmer {
     }    	
 	//ProcessingHouse rejects the lot sent by the farmer in case if the quality of the meat is not good
 	
-	function phrejectLot(string _farmerIDnum, string _lotIDnum) public {        
+	function phrejectLot(string memory _farmerIDnum, string memory _lotIDnum) public {        
 
 		if (uint(AssetState.TransfertoPH) != 2) {
 			revert();
@@ -109,18 +109,18 @@ contract Farmer {
 
 	
 	//anyone can read the lotIDnum
-	function readsAsset(string _farmerIDnum, string _lotIDnum) public returns (string, string, uint,string,string) {
+	function readsAsset(string memory _farmerIDnum, string memory _lotIDnum) public returns (string memory, string memory, uint,string memory,string memory) {
 		return (farmerIDnum[_farmerIDnum].farmerID,farmerIDnum[_farmerIDnum].lotIDnum[_lotIDnum].lotID,farmerIDnum[_farmerIDnum].lotIDnum[_lotIDnum].state,farmerIDnum[_farmerIDnum].phID,farmerIDnum[_farmerIDnum].lotIDnum[_lotIDnum].reason);
 	}	
 
 	
 		//anyone can read the lotIDnum
-	function readAsset(string _farmerIDnum, string _lotIDnum) public returns (uint) {
+	function readAsset(string memory _farmerIDnum, string memory _lotIDnum) public returns (uint) {
 		return (farmerIDnum[_farmerIDnum].lotIDnum[_lotIDnum].state);
 	}	
 
 
-	function getTarget(string _farmerIDnum) public returns (string) {
+	function getTarget(string memory _farmerIDnum) public returns (string memory) {
 		return (farmerIDnum[_farmerIDnum].phID);
 	}		
 }
