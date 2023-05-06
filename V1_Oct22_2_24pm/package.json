@@ -33,7 +33,7 @@
     "ng2-modal": "0.0.25",
     "ng2-opd-popup": "^1.1.21",
     "ng4-file-upload": "^5.1.7",
-    "npm": "^6.4.1",
+    "npm": "^9.6.6",
     "rxjs": "^6.2.2",
     "rxjs-compat": "^6.3.2",
     "truffle-contract": "^3.0.6",
